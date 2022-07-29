@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://liangw27:hXskjd6dKE5rwCkG@start.hh8oi.mongodb.net/postsForAngularDB?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubToken": "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"
+}
