@@ -19,7 +19,6 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-
 app.use(cors());
 
 // Define routes
@@ -29,7 +28,7 @@ app.use("/api/posts", postsRouter);
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
-    app.use(express.static('/dist/my-messages'));
+    app.use(express.static(__dirname +'/dist/my-messages'));
   
     app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '/dist/my-messages', 'index.html'));
