@@ -1,6 +1,6 @@
 # MyMessages
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6. It can be accessed by https://angular-wjl.herokuapp.com/.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6. It can be accessed by https://angular-wjl.herokuapp.com/. It is a MEAN stack application. It is a small social network app that includes authentication, forum posts with uploading pictures.
 
 ## Development server
 
