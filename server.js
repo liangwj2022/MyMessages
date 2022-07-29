@@ -13,7 +13,7 @@ connectDB();
 // Init Middleware
 app.use(express.json());
 app.use("/uploads", express.static(path.join("uploads")));
-app.use(express.static('./dist/my-messages'));
+
 
 app.use(cors());
 
@@ -21,9 +21,15 @@ app.use(cors());
 app.use("/api/users", usersRouter);
 app.use("/api/posts", postsRouter);
 
-app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/my-messages/'}),
-);
+
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('./dist/my-messages/build'));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, './dist/my-messages', 'build', 'index.html'));
+    });
+}
 
 const PORT = process.env.PORT || 5000;
 
